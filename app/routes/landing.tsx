@@ -1,4 +1,4 @@
-import { ArrowRight, Database, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Database, Shield, Sparkles, Zap, Users } from "lucide-react";
 import { Link } from "react-router";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
@@ -28,20 +28,19 @@ export default function LandingPage() {
       description: "内置 Drizzle ORM，类型安全的数据库操作",
     },
     {
+      icon: <Users className="h-6 w-6" />,
+      title: "用户管理",
+      description: "完整的用户 CRUD 功能，支持本地 D1 数据库",
+    },
+    {
       icon: <Shield className="h-6 w-6" />,
       title: "安全可靠",
       description: "企业级安全保障，自动 HTTPS 加密传输",
-    },
-    {
-      icon: <Sparkles className="h-6 w-6" />,
-      title: "现代技术栈",
-      description: "React Router v7 + TypeScript + Tailwind CSS",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 text-center">
         <Badge variant="secondary" className="mb-4">
           <Sparkles className="mr-1 h-3 w-3" />
@@ -57,7 +56,7 @@ export default function LandingPage() {
           使用 React Router v7、Cloudflare Workers 和 D1 数据库构建高性能、 可扩展的现代化应用程序
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <Link to="/home">
+          <Link to="/users">
             <Button size="lg">
               开始使用
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -71,7 +70,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold">核心特性</h2>
@@ -94,7 +92,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="rounded-2xl bg-muted/50 p-8">
           <div className="mb-8 text-center">
@@ -117,7 +114,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 text-center">
         <Card className="mx-auto max-w-2xl">
           <CardHeader>
@@ -125,7 +121,7 @@ export default function LandingPage() {
             <CardDescription>立即体验这个现代化的全栈应用模板</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link to="/home">
+            <Link to="/users">
               <Button size="lg" className="w-full sm:w-auto">
                 进入应用
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -135,7 +131,6 @@ export default function LandingPage() {
         </Card>
       </section>
 
-      {/* Footer */}
       <footer className="border-t py-8">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2024 Mapp. Built with React Router v7 + Cloudflare.</p>
