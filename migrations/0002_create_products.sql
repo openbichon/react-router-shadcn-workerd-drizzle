@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS products (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  description TEXT,
+  price REAL NOT NULL,
+  stock INTEGER NOT NULL DEFAULT 0,
+  category TEXT,
+  status TEXT NOT NULL DEFAULT 'active',
+  created_at INTEGER DEFAULT (strftime('%s', 'now')),
+  updated_at INTEGER DEFAULT (strftime('%s', 'now'))
+);
