@@ -9,9 +9,14 @@
 		"dev": "react-router dev",
 		"postinstall": "npm run cf-typegen",
 		"preview": "pnpm run build && vite preview",
-		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
+		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b",
+		"db:generate": "drizzle-kit generate --config=drizzle.local.config.ts",
+		"db:migrate:local": "wrangler d1 migrations apply mapp-db --local",
+		"db:migrate:remote": "wrangler d1 migrations apply mapp-db --remote",
+		"db:studio": "drizzle-kit studio --config=drizzle.local.config.ts"
 	},
 	"dependencies": {
+		"drizzle-orm": "^0.45.2",
 		"isbot": "^5.1.31",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
@@ -19,11 +24,13 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "^1.13.5",
+		"@cloudflare/workers-types": "^4.20260317.1",
 		"@react-router/dev": "^7.10.0",
 		"@tailwindcss/vite": "^4.1.13",
 		"@types/node": "^22",
 		"@types/react": "^19.1.13",
 		"@types/react-dom": "^19.1.9",
+		"drizzle-kit": "^0.31.10",
 		"tailwindcss": "^4.1.13",
 		"typescript": "^5.9.2",
 		"vite": "^7.1.7",

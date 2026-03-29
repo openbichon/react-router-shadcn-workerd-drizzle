@@ -16,6 +16,14 @@
 	"upload_source_maps": true,
 	"compatibility_flags": [
 		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "mapp-db",
+			"database_id": "<你的数据库ID>",
+			"migrations_dir": "./migrations"
+		}
 	]
 	/**
 	 * Smart Placement
